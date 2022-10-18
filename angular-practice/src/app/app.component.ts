@@ -11,6 +11,7 @@ export class AppComponent {
 
   addMember() {
     this.members.push(this.newMemberName);
+    this.newMemberName = '';
   }
 
   onInput(member: string) {
