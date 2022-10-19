@@ -8,8 +8,14 @@ import { Component } from '@angular/core';
 export class AppComponent {
   newMemberName = '';
   members: string[] = [];
+  errorMessage = '';
 
   addMember() {
+    if (!this.newMemberName) {
+      this.errorMessage = 'Please enter a name';
+      return;
+    } 
+
     this.members.push(this.newMemberName);
     this.newMemberName = '';
   }
